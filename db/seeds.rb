@@ -36,3 +36,61 @@ Video.create([
     user_id: 1
   }
   ])
+
+Sound.create([
+  {
+    title: "Haze Boogie Life",
+    soundcloud_url:"https://soundcloud.com/sinden/mykki-blanco-haze-boogie-life"
+  },
+  {
+    title: "Bionic",
+    soundcloud_url:"https://soundcloud.com/feudalmusicgroup/orka-veer-bionic"
+  }
+    ])
+
+video1 = Video.create(
+  {
+    title: "Shaolin Kung Fu Eagle Form",
+    description: "Competition form",
+    youtube_id: "iirtLX8New",
+    user_id: 2
+  }
+  )
+
+video2 = Video.create(
+  {
+    title: "Martial Arts- Shaolin Kung Fu- Eagle Claw Style",
+    description: "Eagle claw demo",
+    youtube_id: "a-CzRjBvvjA",
+    user_id: 1
+  }
+  )
+
+video1.comments.create([
+  {
+    content: "Nice form; sloppy footwork, though."
+  }
+  ])
+
+video2.comments.create([
+  {
+  content: "Awesome form. Perfect technique. Great speed."
+  }
+  ])
+
+user1 = User.find(1)
+user2 = User.find(2)
+sound1 = Sound.find(1)
+sound2 = Sound.find(2)
+
+new_comment = user1.comments.create(
+  :commentable => video1, :content => "Wow, such kung fu!"
+)
+
+newer_comment = user2.comments.create(
+  :commentable => video2, :content => "This is co crazy!"
+)
+
+sound_comment = user1.comments.create(
+  :commentable => sound1, :content => "Mad beats"
+  )

@@ -1,0 +1,10 @@
+<h2>All Soundcloud Tracks:</h2>
+<ul>
+<% @sounds.each do |sound| %>
+<li><%= link_to sound.title, "/sounds/#{sound.id}" %></li>
+  <% @sounds.comments.content.each do |com_text| %>
+    <%= com_text %>
+  <% end %>
+<% end %>
+</ul>
+<%= link_to 'Create a New Soundcloud link', action: 'new' %>

@@ -1,0 +1,9 @@
+<%= form_tag("/sounds/#{params[:id]}", method: "post") do %>
+  <%= label_tag('sound[title]', "Title:") %>
+  <%= text_field_tag('sound[title]') %><br>
+
+  <%= label_tag('sound[soundcloud_url]', "Soundcloud URL:") %>
+  <%= text_field_tag('sound[soundcloud_url]') %><br>
+
+  <%= submit_tag("submit") %>
+<% end %>
