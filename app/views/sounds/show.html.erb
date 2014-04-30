@@ -7,5 +7,9 @@
   <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=yourPlayerId" type="application/x-shockwave-flash" width="100%" name="yourPlayerId"></embed>
 </object>
 
+</br>
+<% @sound.comments.each do |com| %>
+    <%= com.content %>
+  <% end %>
 
 
